@@ -7,7 +7,7 @@
 //
 
 #import "CFAppDelegate.h"
-#import "CFMyView.h"
+#import "CFMyViewController.h"
 
 @implementation CFAppDelegate
 
@@ -24,25 +24,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    CFMyView * colorView = [[CFMyView alloc] initWithFrame:CGRectMake(0, 100, 100, 100) type:@"颜色随机"];
-    colorView.backgroundColor = [UIColor redColor];
-    [self.window addSubview:colorView];
-    [colorView release];
-    
-    CFMyView * originView = [[CFMyView alloc] initWithFrame:CGRectMake(100, 100, 100, 100) type:@"位置随机"];
-    originView.backgroundColor = [UIColor greenColor];
-    [self.window addSubview: originView];
-    [originView release];
-    
-    CFMyView * sizeView = [[CFMyView alloc] initWithFrame:CGRectMake(200, 100, 100, 100) type:@"大小随机"];
-    sizeView.backgroundColor = [UIColor blueColor];
-    [self.window addSubview:sizeView];
-    [sizeView release];
-    
-    CFMyView * clickView = [[CFMyView alloc] initWithFrame:CGRectMake(100,200,100,100) type:@"单双击"];
-    clickView.backgroundColor = [UIColor cyanColor];
-    [self.window addSubview: clickView];
-    [clickView release];
+    CFMyViewController * controller = [[CFMyViewController alloc] init];
+    self.window.rootViewController = controller;
+    [controller release];
     
     return YES;
 }

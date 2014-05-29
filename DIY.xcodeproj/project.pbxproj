@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2344EA91936DFA100604C86 /* CFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2344EA81936DFA100604C86 /* CFMyViewController.m */; };
 		C27439BE19361B4400407331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27439BD19361B4400407331 /* Foundation.framework */; };
 		C27439C019361B4400407331 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27439BF19361B4400407331 /* CoreGraphics.framework */; };
 		C27439C219361B4400407331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27439C119361B4400407331 /* UIKit.framework */; };
@@ -20,7 +21,9 @@
 		C27439E119361B4400407331 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C27439DF19361B4400407331 /* InfoPlist.strings */; };
 		C27439E319361B4400407331 /* DIYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C27439E219361B4400407331 /* DIYTests.m */; };
 		C27439ED19361B7E00407331 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = C27439EC19361B7E00407331 /* readme.md */; };
-		C27439F01936223D00407331 /* CFMyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27439EF1936223D00407331 /* CFMyView.m */; };
+		C2DF2E3219374DBC009368D6 /* 效果图.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2DF2E3119374DBC009368D6 /* 效果图.jpg */; };
+		C2DF2E3619375256009368D6 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2DF2E3519375256009368D6 /* 01.jpg */; };
+		C2DF2E3819376679009368D6 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DF2E3719376679009368D6 /* 02.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2344EA71936DFA100604C86 /* CFMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMyViewController.h; sourceTree = "<group>"; };
+		C2344EA81936DFA100604C86 /* CFMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMyViewController.m; sourceTree = "<group>"; };
 		C27439BA19361B4400407331 /* DIY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27439BD19361B4400407331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C27439BF19361B4400407331 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,8 +56,9 @@
 		C27439E019361B4400407331 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C27439E219361B4400407331 /* DIYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIYTests.m; sourceTree = "<group>"; };
 		C27439EC19361B7E00407331 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = SOURCE_ROOT; };
-		C27439EE1936223D00407331 /* CFMyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMyView.h; sourceTree = "<group>"; };
-		C27439EF1936223D00407331 /* CFMyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMyView.m; sourceTree = "<group>"; };
+		C2DF2E3119374DBC009368D6 /* 效果图.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "效果图.jpg"; sourceTree = "<group>"; };
+		C2DF2E3519375256009368D6 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
+		C2DF2E3719376679009368D6 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +123,8 @@
 				C27439CF19361B4400407331 /* Images.xcassets */,
 				C27439C419361B4400407331 /* Supporting Files */,
 				C27439EC19361B7E00407331 /* readme.md */,
-				C27439EE1936223D00407331 /* CFMyView.h */,
-				C27439EF1936223D00407331 /* CFMyView.m */,
+				C2344EA71936DFA100604C86 /* CFMyViewController.h */,
+				C2344EA81936DFA100604C86 /* CFMyViewController.m */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -126,6 +132,9 @@
 		C27439C419361B4400407331 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2DF2E3719376679009368D6 /* 02.png */,
+				C2DF2E3519375256009368D6 /* 01.jpg */,
+				C2DF2E3119374DBC009368D6 /* 效果图.jpg */,
 				C27439C519361B4400407331 /* DIY-Info.plist */,
 				C27439C619361B4400407331 /* InfoPlist.strings */,
 				C27439C919361B4400407331 /* main.m */,
@@ -228,9 +237,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2DF2E3619375256009368D6 /* 01.jpg in Resources */,
+				C2DF2E3219374DBC009368D6 /* 效果图.jpg in Resources */,
 				C27439C819361B4400407331 /* InfoPlist.strings in Resources */,
 				C27439ED19361B7E00407331 /* readme.md in Resources */,
 				C27439D019361B4400407331 /* Images.xcassets in Resources */,
+				C2DF2E3819376679009368D6 /* 02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C27439F01936223D00407331 /* CFMyView.m in Sources */,
 				C27439CA19361B4400407331 /* main.m in Sources */,
 				C27439CE19361B4400407331 /* CFAppDelegate.m in Sources */,
+				C2344EA91936DFA100604C86 /* CFMyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +464,7 @@
 				C27439E819361B4400407331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C27439E919361B4400407331 /* Build configuration list for PBXNativeTarget "DIYTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +473,7 @@
 				C27439EB19361B4400407331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
