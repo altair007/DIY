@@ -19,6 +19,8 @@
 		C27439D919361B4400407331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27439C119361B4400407331 /* UIKit.framework */; };
 		C27439E119361B4400407331 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C27439DF19361B4400407331 /* InfoPlist.strings */; };
 		C27439E319361B4400407331 /* DIYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C27439E219361B4400407331 /* DIYTests.m */; };
+		C27439ED19361B7E00407331 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = C27439EC19361B7E00407331 /* readme.md */; };
+		C27439F01936223D00407331 /* CFMyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27439EF1936223D00407331 /* CFMyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		C27439DE19361B4400407331 /* DIYTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DIYTests-Info.plist"; sourceTree = "<group>"; };
 		C27439E019361B4400407331 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C27439E219361B4400407331 /* DIYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIYTests.m; sourceTree = "<group>"; };
+		C27439EC19361B7E00407331 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = SOURCE_ROOT; };
+		C27439EE1936223D00407331 /* CFMyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMyView.h; sourceTree = "<group>"; };
+		C27439EF1936223D00407331 /* CFMyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,9 @@
 				C27439CD19361B4400407331 /* CFAppDelegate.m */,
 				C27439CF19361B4400407331 /* Images.xcassets */,
 				C27439C419361B4400407331 /* Supporting Files */,
+				C27439EC19361B7E00407331 /* readme.md */,
+				C27439EE1936223D00407331 /* CFMyView.h */,
+				C27439EF1936223D00407331 /* CFMyView.m */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C27439C819361B4400407331 /* InfoPlist.strings in Resources */,
+				C27439ED19361B7E00407331 /* readme.md in Resources */,
 				C27439D019361B4400407331 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27439F01936223D00407331 /* CFMyView.m in Sources */,
 				C27439CA19361B4400407331 /* main.m in Sources */,
 				C27439CE19361B4400407331 /* CFAppDelegate.m in Sources */,
 			);
@@ -360,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DIY/DIY-Prefix.pch";
 				INFOPLIST_FILE = "DIY/DIY-Info.plist";
@@ -373,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DIY/DIY-Prefix.pch";
 				INFOPLIST_FILE = "DIY/DIY-Info.plist";
