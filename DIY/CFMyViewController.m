@@ -72,6 +72,7 @@
     // 根据title信息,绑定不同的手势
     if ([title isEqualToString:@"轻拍"]) {
         UITapGestureRecognizer * tapGeture = [[UITapGestureRecognizer alloc] initWithTarget:self action: @selector(tapGesture:)];
+        tapGeture.numberOfTouchesRequired = 2;
         [self.imageView addGestureRecognizer:tapGeture];
         [tapGeture release];
     }
@@ -103,9 +104,27 @@
     
     
     if ([title isEqualToString:@"轻扫"]) {
-        UISwipeGestureRecognizer * swipeGeture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
-        [self.imageView addGestureRecognizer:swipeGeture];
-        [swipeGeture release];
+        UISwipeGestureRecognizer * swipeGetureLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
+        swipeGetureLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+        [self.imageView addGestureRecognizer:swipeGetureLeft];
+        [swipeGetureLeft release];
+        
+        UISwipeGestureRecognizer * swipeGetureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
+        swipeGetureRight.direction = UISwipeGestureRecognizerDirectionRight;
+        [self.imageView addGestureRecognizer:swipeGetureRight];
+        [swipeGetureRight release];
+        
+        
+        UISwipeGestureRecognizer * swipeGetureDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
+        swipeGetureDown.direction = UISwipeGestureRecognizerDirectionDown;
+        [self.imageView addGestureRecognizer:swipeGetureDown];
+        [swipeGetureDown release];
+        
+        
+        UISwipeGestureRecognizer * swipeGetureUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
+        swipeGetureUp.direction = UISwipeGestureRecognizerDirectionUp;
+        [self.imageView addGestureRecognizer:swipeGetureUp];
+        [swipeGetureUp release];
     }
     
 }
@@ -113,10 +132,7 @@
 - (void) tapGesture: (UITapGestureRecognizer *) gesture
 {
     // 要求:轻拍手势：双指、单击，修改imageView的frame为(0,0,320,200)
-    // FIXME: 无法模拟双指单击!
-    if (2 == gesture.numberOfTouchesRequired && 1 == gesture.numberOfTapsRequired) {
-        self.imageView.frame = CGRectMake(0, 0, 320, 200);
-    }
+    self.imageView.frame = CGRectMake(0, 0, 320, 200);
 }
 
 - (void) longPressGesture: (UILongPressGestureRecognizer *) gesture
@@ -144,22 +160,17 @@
 
 - (void) swipeGesture: (UISwipeGestureRecognizer *) gesture
 {
-    // FIXME: 无法识别前三个方向!
-    if (gesture.direction == UISwipeGestureRecognizerDirectionUp) {
-        
+    if (gesture.direction == UISwipeGestureRecognizerDirectionUp ||
+        gesture.direction == UISwipeGestureRecognizerDirectionDown) {// 竖向
+        //图像随机切换
+        NSArray * imgs = @[@"01.jpg", @"02.png"];
+        self.imageView.image = [UIImage imageNamed:imgs[arc4random()%2]];
+        return;
     }
     
-    if (gesture.direction == UISwipeGestureRecognizerDirectionDown) {
-        
-    }
-    
-    if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
-        
-    }
-    
-    if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
-        
-    }
+    // 横向:横向轻扫实现：图像消失，随机修改imageview的背景颜色
+    self.imageView.hidden = YES;
+    self.view.backgroundColor = [[[UIColor alloc]initWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:arc4random()%256/255.0] autorelease];
 }
 
 - (void)didReceiveMemoryWarning
