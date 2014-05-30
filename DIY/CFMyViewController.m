@@ -7,7 +7,6 @@
 //
 
 #import "CFMyViewController.h"
-#import "UIImage+Extras.h"
 
 @interface CFMyViewController ()
 
@@ -64,6 +63,11 @@
 
 - (void) didClickButtonAction: (UIButton *) button
 {
+    // 重置视图:先重置transform,再重置frame!
+	self.imageView.transform = CGAffineTransformIdentity;
+    self.imageView.frame = CGRectMake(self.view.frame.size.width * 0.05, self.view.frame.size.height * 0.1, self.view.frame.size.height*0.5, self.view.frame.size.width * 0.5);
+    self.imageView.image = [UIImage imageNamed:@"01.jpg"];
+    
     // 清除所有已有手势
     self.imageView.gestureRecognizers = nil;
     
@@ -150,12 +154,9 @@
 
 - (void) pinchGesture: (UIPinchGestureRecognizer *) gesture
 {
-    CGFloat scale = gesture.scale;
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, gesture.scale, gesture.scale);
     
-    // 对图片进行缩放:改变UIImageView的frame,间接改变image.
-    gesture.view.frame = CGRectMake(gesture.view.frame.origin.x, gesture.view.frame.origin.y, gesture.view.frame.size.width * scale, gesture.view.frame.size.height * scale);
-    
-    gesture.scale = 1;
+	gesture.scale = 1;
 }
 
 - (void) swipeGesture: (UISwipeGestureRecognizer *) gesture
