@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C2344EA91936DFA100604C86 /* CFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2344EA81936DFA100604C86 /* CFMyViewController.m */; };
+		C2610D9B19382101003E034A /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C2610D9A19382101003E034A /* UIImage+Extras.m */; };
 		C27439BE19361B4400407331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27439BD19361B4400407331 /* Foundation.framework */; };
 		C27439C019361B4400407331 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27439BF19361B4400407331 /* CoreGraphics.framework */; };
 		C27439C219361B4400407331 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27439C119361B4400407331 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		C2344EA71936DFA100604C86 /* CFMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMyViewController.h; sourceTree = "<group>"; };
 		C2344EA81936DFA100604C86 /* CFMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMyViewController.m; sourceTree = "<group>"; };
+		C2610D9919382101003E034A /* UIImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extras.h"; sourceTree = "<group>"; };
+		C2610D9A19382101003E034A /* UIImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extras.m"; sourceTree = "<group>"; };
 		C27439BA19361B4400407331 /* DIY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27439BD19361B4400407331 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C27439BF19361B4400407331 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +128,8 @@
 				C27439EC19361B7E00407331 /* readme.md */,
 				C2344EA71936DFA100604C86 /* CFMyViewController.h */,
 				C2344EA81936DFA100604C86 /* CFMyViewController.m */,
+				C2610D9919382101003E034A /* UIImage+Extras.h */,
+				C2610D9A19382101003E034A /* UIImage+Extras.m */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			files = (
 				C27439CA19361B4400407331 /* main.m in Sources */,
 				C27439CE19361B4400407331 /* CFAppDelegate.m in Sources */,
+				C2610D9B19382101003E034A /* UIImage+Extras.m in Sources */,
 				C2344EA91936DFA100604C86 /* CFMyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "CFMyViewController.h"
+#import "UIImage+Extras.h"
 
 @interface CFMyViewController ()
 
@@ -104,27 +105,15 @@
     
     
     if ([title isEqualToString:@"轻扫"]) {
-        UISwipeGestureRecognizer * swipeGetureLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
-        swipeGetureLeft.direction = UISwipeGestureRecognizerDirectionLeft;
-        [self.imageView addGestureRecognizer:swipeGetureLeft];
-        [swipeGetureLeft release];
+        UISwipeGestureRecognizer * swipeGetureLandscape = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
+        swipeGetureLandscape.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+        [self.imageView addGestureRecognizer:swipeGetureLandscape];
+        [swipeGetureLandscape release];
         
-        UISwipeGestureRecognizer * swipeGetureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
-        swipeGetureRight.direction = UISwipeGestureRecognizerDirectionRight;
-        [self.imageView addGestureRecognizer:swipeGetureRight];
-        [swipeGetureRight release];
-        
-        
-        UISwipeGestureRecognizer * swipeGetureDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
-        swipeGetureDown.direction = UISwipeGestureRecognizerDirectionDown;
-        [self.imageView addGestureRecognizer:swipeGetureDown];
-        [swipeGetureDown release];
-        
-        
-        UISwipeGestureRecognizer * swipeGetureUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
-        swipeGetureUp.direction = UISwipeGestureRecognizerDirectionUp;
-        [self.imageView addGestureRecognizer:swipeGetureUp];
-        [swipeGetureUp release];
+        UISwipeGestureRecognizer * swipeGetureVertical = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeGesture:)];
+        swipeGetureVertical.direction = UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp;
+        [self.imageView addGestureRecognizer:swipeGetureVertical];
+        [swipeGetureVertical release];
     }
     
 }
@@ -132,7 +121,7 @@
 - (void) tapGesture: (UITapGestureRecognizer *) gesture
 {
     // 要求:轻拍手势：双指、单击，修改imageView的frame为(0,0,320,200)
-    self.imageView.frame = CGRectMake(0, 0, 320, 200);
+    gesture.view.frame = CGRectMake(0, 0, 320, 200);
 }
 
 - (void) longPressGesture: (UILongPressGestureRecognizer *) gesture
@@ -143,25 +132,35 @@
     }
 }
 
-- (void) panGesture: (UIPanGestureRecognizer *) gestrue
+- (void) panGesture: (UIPanGestureRecognizer *) gesture
 {
+    CGPoint translation = [gesture translationInView:gesture.view.superview];
     
+    gesture.view.center = CGPointMake(gesture.view.center.x+translation.x, gesture.view.center.y+translation.y);
+    
+    [gesture setTranslation:CGPointZero inView:gesture.view.superview];
 }
 
 - (void) rotationGesture: (UIRotationGestureRecognizer *) gesture
 {
+    gesture.view.transform = CGAffineTransformRotate(gesture.view.transform, gesture.rotation);
     
+    gesture.rotation = 0;
 }
 
 - (void) pinchGesture: (UIPinchGestureRecognizer *) gesture
 {
+    CGFloat scale = gesture.scale;
     
+    // 对图片进行缩放:改变UIImageView的frame,间接改变image.
+    gesture.view.frame = CGRectMake(gesture.view.frame.origin.x, gesture.view.frame.origin.y, gesture.view.frame.size.width * scale, gesture.view.frame.size.height * scale);
+    
+    gesture.scale = 1;
 }
 
 - (void) swipeGesture: (UISwipeGestureRecognizer *) gesture
 {
-    if (gesture.direction == UISwipeGestureRecognizerDirectionUp ||
-        gesture.direction == UISwipeGestureRecognizerDirectionDown) {// 竖向
+    if (gesture.direction == (UISwipeGestureRecognizerDirectionUp |UISwipeGestureRecognizerDirectionDown)) {// 竖向
         //图像随机切换
         NSArray * imgs = @[@"01.jpg", @"02.png"];
         self.imageView.image = [UIImage imageNamed:imgs[arc4random()%2]];
@@ -169,8 +168,8 @@
     }
     
     // 横向:横向轻扫实现：图像消失，随机修改imageview的背景颜色
-    self.imageView.hidden = YES;
-    self.view.backgroundColor = [[[UIColor alloc]initWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:arc4random()%256/255.0] autorelease];
+    self.imageView.image = nil;
+    self.imageView.backgroundColor = [[[UIColor alloc]initWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:arc4random()%256/255.0] autorelease];
 }
 
 - (void)didReceiveMemoryWarning
