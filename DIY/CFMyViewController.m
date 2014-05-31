@@ -45,23 +45,25 @@
     [self.view addSubview:self.imageView];
     [imageView release];
     
-    // 六个按钮
-    NSArray * titles = @[@"轻拍", @"长按" , @"平移", @"旋转", @"捏合", @"轻扫"];
-    __block CGRect base = CGRectMake(self.view.frame.size.width * 0.07, self.view.frame.size.height * 0.6, self.view.frame.size.width / 7, self.view.frame.size.height * 0.1);
-    [titles enumerateObjectsUsingBlock:^(NSString * title, NSUInteger idx, BOOL *stop) {
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
-        button.frame = base;
-        [self.view addSubview: button];
-        [button setTitle:title forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(didClickButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        base = CGRectMake(base.origin.x + base.size.width, base.origin.y, base.size.width, base.size.height);
-        
-    }];
+    // 六个"按钮"
+    UISegmentedControl * segement = [[UISegmentedControl alloc] initWithItems:@[@"轻拍", @"长按" , @"平移", @"旋转", @"捏合", @"轻扫"]];
+    
+    // 位置
+    segement.frame = CGRectMake(self.view.frame.size.width * 0.07, self.view.frame.size.height * 0.6, self.view.frame.size.width * 0.86, self.view.frame.size.height * 0.1);
+    
+    // 瞬时效果
+    segement.momentary = YES;
+    
+    // 代理
+    [segement addTarget:self action:@selector(didClickSegmentedControlAction:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.view addSubview: segement];
+    
+    [segement release];
     
 }
 
-- (void) didClickButtonAction: (UIButton *) button
+- (void) didClickSegmentedControlAction: (UISegmentedControl *) segmentedControl
 {
     // 重置视图:先重置transform,再重置frame!
 	self.imageView.transform = CGAffineTransformIdentity;
@@ -71,8 +73,8 @@
     // 清除所有已有手势
     self.imageView.gestureRecognizers = nil;
     
-    // 获取button的title信息
-    NSString * title = [button titleForState: UIControlStateNormal];
+    // 获取"button"的title信息
+    NSString * title = [segmentedControl titleForSegmentAtIndex: segmentedControl.selectedSegmentIndex];
     
     // 根据title信息,绑定不同的手势
     if ([title isEqualToString:@"轻拍"]) {
@@ -119,7 +121,6 @@
         [self.imageView addGestureRecognizer:swipeGetureVertical];
         [swipeGetureVertical release];
     }
-    
 }
 
 - (void) tapGesture: (UITapGestureRecognizer *) gesture
@@ -131,18 +132,15 @@
 - (void) longPressGesture: (UILongPressGestureRecognizer *) gesture
 {
     // 长按手指：单指，imageview的图像修改为另一张图像
-    if (1 == gesture.numberOfTouchesRequired) {
-        self.imageView.image = [UIImage imageNamed:@"02.png"];
-    }
+    self.imageView.image = [UIImage imageNamed:@"02.png"];
 }
 
 - (void) panGesture: (UIPanGestureRecognizer *) gesture
 {
-    CGPoint translation = [gesture translationInView:gesture.view.superview];
-    
+    CGPoint translation = [gesture translationInView:gesture.view];
     gesture.view.center = CGPointMake(gesture.view.center.x+translation.x, gesture.view.center.y+translation.y);
     
-    [gesture setTranslation:CGPointZero inView:gesture.view.superview];
+    [gesture setTranslation:CGPointZero inView:gesture.view];
 }
 
 - (void) rotationGesture: (UIRotationGestureRecognizer *) gesture
