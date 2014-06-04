@@ -7,7 +7,7 @@
 //
 
 #import "CFAppDelegate.h"
-#import "CFMyViewController.h"
+#import "CFFirstViewController.h"
 
 @implementation CFAppDelegate
 
@@ -22,12 +22,18 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    CFFirstViewController * firstVC = [[CFFirstViewController alloc] init];
+    
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:firstVC];
+    
+    self.window.rootViewController = navController;
+
+    
     [self.window makeKeyAndVisible];
     
-    CFMyViewController * controller = [[CFMyViewController alloc] init];
-    self.window.rootViewController = controller;
-    [controller release];
-    
+    [firstVC release];
+    [navController release];
     return YES;
 }
 

@@ -21,6 +21,8 @@
 		C27439E119361B4400407331 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C27439DF19361B4400407331 /* InfoPlist.strings */; };
 		C27439E319361B4400407331 /* DIYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C27439E219361B4400407331 /* DIYTests.m */; };
 		C27439ED19361B7E00407331 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = C27439EC19361B7E00407331 /* readme.md */; };
+		C2D5DD66193F4A3600796AF7 /* CFFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5DD65193F4A3600796AF7 /* CFFirstViewController.m */; };
+		C2D5DD69193F4A4600796AF7 /* CFSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5DD68193F4A4600796AF7 /* CFSecondViewController.m */; };
 		C2DF2E3219374DBC009368D6 /* 效果图.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2DF2E3119374DBC009368D6 /* 效果图.jpg */; };
 		C2DF2E3619375256009368D6 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2DF2E3519375256009368D6 /* 01.jpg */; };
 		C2DF2E3819376679009368D6 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DF2E3719376679009368D6 /* 02.png */; };
@@ -56,6 +58,10 @@
 		C27439E019361B4400407331 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C27439E219361B4400407331 /* DIYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIYTests.m; sourceTree = "<group>"; };
 		C27439EC19361B7E00407331 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = SOURCE_ROOT; };
+		C2D5DD64193F4A3600796AF7 /* CFFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFirstViewController.h; sourceTree = "<group>"; };
+		C2D5DD65193F4A3600796AF7 /* CFFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFirstViewController.m; sourceTree = "<group>"; };
+		C2D5DD67193F4A4600796AF7 /* CFSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSecondViewController.h; sourceTree = "<group>"; };
+		C2D5DD68193F4A4600796AF7 /* CFSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSecondViewController.m; sourceTree = "<group>"; };
 		C2DF2E3119374DBC009368D6 /* 效果图.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "效果图.jpg"; sourceTree = "<group>"; };
 		C2DF2E3519375256009368D6 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
 		C2DF2E3719376679009368D6 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
@@ -125,6 +131,10 @@
 				C27439EC19361B7E00407331 /* readme.md */,
 				C2344EA71936DFA100604C86 /* CFMyViewController.h */,
 				C2344EA81936DFA100604C86 /* CFMyViewController.m */,
+				C2D5DD64193F4A3600796AF7 /* CFFirstViewController.h */,
+				C2D5DD65193F4A3600796AF7 /* CFFirstViewController.m */,
+				C2D5DD67193F4A4600796AF7 /* CFSecondViewController.h */,
+				C2D5DD68193F4A4600796AF7 /* CFSecondViewController.m */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -263,7 +273,9 @@
 			files = (
 				C27439CA19361B4400407331 /* main.m in Sources */,
 				C27439CE19361B4400407331 /* CFAppDelegate.m in Sources */,
+				C2D5DD66193F4A3600796AF7 /* CFFirstViewController.m in Sources */,
 				C2344EA91936DFA100604C86 /* CFMyViewController.m in Sources */,
+				C2D5DD69193F4A4600796AF7 /* CFSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
